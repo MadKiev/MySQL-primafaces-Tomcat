@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+	  xmlns:p="http://primefaces.org/ui"
+      >
+    <h:head>
+    	<h:outputStylesheet library="css" name="table-style.css"  />
+    </h:head>
+ 
+    <h:body>
+ 
+    	<h1>Functions</h1>
+
+ 
+    <p:dataTable id="groupFunction" var="groupFunction" value="#{dtSelectionView.funGroups}" selectionMode="single" rowKey="#{groupFunction.id}">
+        <f:facet name="header">
+            Group of functions
+        </f:facet>
+        <p:ajax event="rowSelect" listener="#{dtSelectionView.funGroups}" />
+        <p:column headerText="Id">
+            <h:outputText value="#{groupFunction.id}" />
+        </p:column>
+        <p:column headerText="Name">
+            <h:outputText value="#{groupFunction.name}" />
+        </p:column>
+        <p:column headerText="Description">
+            <h:outputText value="#{groupFunction.descr}" />
+        </p:column>
+        <p:column headerText="CTime">
+            <h:outputText value="#{groupFunction.cTime}" />
+        </p:column>
+    </p:dataTable>
+    
+    <p:dataTable id="Function" var="Function" value="#{dtSelectionView.functions}" selectionMode="single" rowKey="#{Function.id}">
+        <f:facet name="header">
+            Function
+        </f:facet>
+        <p:ajax event="rowSelect" listener="#{dtSelectionView.functions}" />
+        <p:column headerText="Id">
+            <h:outputText value="#{Function.id}" />
+        </p:column>
+        <p:column headerText="Name">
+            <h:outputText value="#{Function.name}" />
+        </p:column>
+        <p:column headerText="Description">
+            <h:outputText value="#{Function.descr}" />
+        </p:column>
+        <p:column headerText="CTime">
+            <h:outputText value="#{Function.cTime}" />
+        </p:column>
+    </p:dataTable>
+    
+    
+    <p:dataTable id="FunParam" var="FunParam" value="#{dtSelectionView.functionParams}" selectionMode="single" rowKey="#{FunParam.id}">
+        <f:facet name="header">
+            FunParam
+        </f:facet>
+        <p:ajax event="rowSelect" listener="#{dtSelectionView.functionParams}" />
+        <p:column headerText="Id">
+            <h:outputText value="#{FunParam.id}" />
+        </p:column>
+        <p:column headerText="Name">
+            <h:outputText value="#{FunParam.name}" />
+        </p:column>
+        <p:column headerText="Description">
+            <h:outputText value="#{FunParam.descr}" />
+        </p:column>
+        <p:column headerText="CTime">
+            <h:outputText value="#{FunParam.cTime}" />
+        </p:column>
+    </p:dataTable>
+    
+    
+    
+
+
+
+
+   
+ 		
+    </h:body>
+ 
+</html>
